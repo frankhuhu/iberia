@@ -1,0 +1,104 @@
+<h1>New Inventory</h1>
+
+<%= form_for :inventory, url: {action: "create"} do |f| %>
+
+    <p>
+        <%= f.label :invoce %><br>
+        <%= f.text_field :invoce %>
+    </p>
+
+    <p>
+        <%= f.label :customer %><br>
+        <%= f.text_field :customer %>
+    </p>
+
+    <p>
+        <%= f.label :paid_date %><br>
+        <%= f.text_field :paid_date %>
+    </p>
+
+    <p>
+        <%= f.label :side %><br>
+        <%= f.text_field :side %>
+    </p>
+
+    <p>
+        <%= f.label :of %><br>
+        <%= f.text_field :of %>
+    </p>
+
+    <p>
+        <%= f.label :crt %><br>
+        <%= f.text_field :crt %>
+    </p>
+
+    <p>
+        <%= f.label :seal %><br>
+        <%= f.text_field :seal %>
+    </p>
+
+    <p>
+        <%= f.label :bale %><br>
+        <%= f.text_field :bale %>
+    </p>
+
+    <p>
+        <%= f.label :weight %><br>
+        <%= f.text_field :weight %>
+    </p>
+
+    <p>
+        <%= f.label :bgk %><br>
+        <%= f.text_field :bgk %>
+    </p>
+
+    <p>
+        <%= f.label :erd %><br>
+        <%= f.text_field :erd %>
+    </p>
+
+    <p>
+        <%= f.label :cut_off %><br>
+        <%= f.text_field :cut_off %>
+    </p>
+
+    <p>
+        <%= f.label :note %><br>
+        <%= f.text_area :note %>
+    </p>
+
+    <p>
+        <%= f.label :in_date %><br>
+        <%= f.text_field :in_date %>
+    </p>
+
+    <p>
+        <%= f.label :out_date %><br>
+        <%= f.text_field :out_date %>
+    </p>
+
+    <p>
+        <%= f.label :bl %><br>
+        <%= f.text_field :bl %>
+    </p>
+
+    <p>
+        <%= f.label :pic %><br>
+        <%= f.text_field :pic %>
+    </p>
+
+    <p>
+        <%= f.label :truck %><br>
+        <%= f.text_field :truck %>
+    </p>
+
+    <p>
+        <%= f.label :paid %><br>
+        <%= f.text_field :paid %>
+    </p>
+
+    <p>
+        <%= f.submit %><br>
+    </p>
+
+<% end %>
