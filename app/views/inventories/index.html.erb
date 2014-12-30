@@ -1,0 +1,77 @@
+<div class="page-container">
+
+  <%= render "shared/page_header" %>
+
+  <div class="page-content-wrapper">
+    <div class="content">
+      <div class="container-fluid container-fixed-lg">
+        <div class="panel panel-transparent">
+          <div class="panel-heading">
+            <div class="panel-title">Inventories</div>
+            <div class="pull-right">
+              <div class="col-xs-12">
+                <button id="show-modal" class="btn btn-cons">
+                    <%= link_to "New Inventory", new_inventory_path, class: "btn btn-success" %>
+                </button>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="panel-body">
+            <table class="table table-hover demo-table-dynamic" id="tableWithDynamicRows">
+              <thead>
+                <tr>
+                  <th>INVOICE#</th>
+                  <th>CUST</th>
+                  <th>PAID</th>
+                  <th>SIDE</th>
+                  <th>O/F</th>
+                  <th>CRT#</th>
+                  <th>SEAL</th>
+                  <th>BALE</th>
+                  <th>WEIGHT</th>
+                  <th>BGK#</th>
+                  <th>ERD</th>
+                  <th>CUT OFF</th>
+                  <th>NOTE</th>
+                  <th>IN</th>
+                  <th>OUT</th>
+                  <th>BL</th>
+                  <th>PIC</th>
+                  <th>TRUCK</th>
+                  <th>PAID</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @inventories.each do |inv| %>
+                  <tr>
+                    <td><%= link_to inv.invoice, edit_inventory_path(inv) %></td>
+                    <td><%= inv.customer %></td>
+                    <td><%= inv.paid_date %></td>
+                    <td><%= inv.side %></td>
+                    <td><%= inv.o_f %></td>
+                    <td><%= inv.crt %></td>
+                    <td><%= inv.seal %></td>
+                    <td><%= inv.bale %></td>
+                    <td><%= inv.weight %></td>
+                    <td><%= inv.bgk %></td>
+                    <td><%= inv.erd %></td>
+                    <td><%= inv.cutoff_date %></td>
+                    <td><%= inv.note %></td>
+                    <td><%= inv.in_date %></td>
+                    <td><%= inv.out_date %></td>
+                    <td><%= inv.bl %></td>
+                    <td><%= inv.pic %></td>
+                    <td><%= inv.truck %></td>
+                    <td><%= inv.paid %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
