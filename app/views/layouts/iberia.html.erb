@@ -4,6 +4,8 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
   <meta charset="utf-8"/>
   <title>KeroZak - Iberia</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <script type="text/javascript">
@@ -12,16 +14,6 @@
     //]]>
   </script>
 
-
-  <%= stylesheet_link_tag    'pace-theme-flash.css' %>
-  <%= stylesheet_link_tag    'bootstrap.min.css' %>
-  <%= stylesheet_link_tag    'jquery.scrollbar.css' %>
-  <%= stylesheet_link_tag    'font-awesome.css' %>
-  <%= stylesheet_link_tag    'select2.css' %>
-  <%= stylesheet_link_tag    'switchery.min.css' %>
-  <%= stylesheet_link_tag    'datepicker3.css' %>
-  <%= stylesheet_link_tag    'pages/pages-icons.css' %>
-  <%= stylesheet_link_tag    'pages/pages.css', class: 'main-stylesheet' %>
 
   <!--[if lte IE 9]>
   <link href="pages/css/ie9.css" rel="stylesheet" type="text/css" />
@@ -41,25 +33,7 @@
 
   <%= yield %>
 
-  <%= javascript_include_tag 'pace.min.js' %>
-  <%= javascript_include_tag 'jquery-1.8.3.min.js' %>
-  <%= javascript_include_tag 'modernizr.custom.js' %>
-  <%= javascript_include_tag 'jquery-ui.min.js' %>
-  <%= javascript_include_tag 'bootstrap.min.js' %>
-  <%= javascript_include_tag 'jquery-easy.js' %>
-  <%= javascript_include_tag 'jquery.unveil.min.js' %>
-  <%= javascript_include_tag 'jquery.bez.min.js' %>
-  <%= javascript_include_tag 'jquery.ioslist.min.js' %>
-  <%= javascript_include_tag 'jquery.actual.min.js' %>
-  <%= javascript_include_tag 'jquery.scrollbar.min.js' %>
-  <%= javascript_include_tag 'select2.min.js' %>
-  <%= javascript_include_tag 'classie.js' %>
-  <%= javascript_include_tag 'switchery.min.js' %>
-  <%= javascript_include_tag 'jquery.validate.min.js' %>
-  <%= javascript_include_tag 'bootstrap-datepicker.js' %>
-  <%= javascript_include_tag 'pages.min.js' %>
-  <%= javascript_include_tag 'form_layouts.js' %>
-  <%= javascript_include_tag 'scripts.js' %>
+  <%= javascript_include_tag 'application', :type => "text/javascript" %>
 
 </body>
 </html>

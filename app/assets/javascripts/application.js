@@ -10,7 +10,23 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
+//= require pace/pace.min.js
+//= require jquery/jquery-1.8.3.min.js
+//= require modernizr.custom.js
+//= require jquery-ui/jquery-ui.min.js
+//= require boostrapv3/js/bootstrap.min.js
+//= require jquery/jquery-easy.js
+//= require jquery-unveil/jquery.unveil.min.js
+//= require jquery-bez/jquery.bez.min.js
+//= require jquery-ios-list/jquery.ioslist.min.js
+//= require jquery-actual/jquery.actual.min.js
+//= require jquery-scrollbar/jquery.scrollbar.min.js
+//= require bootstrap-select2/select2.min.js
+//= require classie/classie.js
+//= require switchery/js/switchery.min.js
+//= require jquery-validation/js/jquery.validate.min.js
+//= require bootstrap-datepicker/js/bootstrap-datepicker.js
+//= require pages/js/pages.min.js
+//= require form_layouts.js
+//= require scripts.js
 //= require_tree .
