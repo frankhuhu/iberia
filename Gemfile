@@ -38,3 +38,5 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Use Font-Awesome
+gem 'font-awesome-sass', '~> 4.2.0'

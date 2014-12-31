@@ -21,6 +21,7 @@
             <table class="table table-hover demo-table-dynamic" id="tableWithDynamicRows">
               <thead>
                 <tr>
+                  <th></th>
                   <th>INVOICE#</th>
                   <th>CUST</th>
                   <th>PAID</th>
@@ -45,6 +46,11 @@
               <tbody>
                 <% @inventories.each do |inv| %>
                   <tr>
+                    <td>
+                      <%= link_to inventory_path(inv), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                        <i class="fa fa-trash"></i>
+                      <% end %>
+                    </td>
                     <td><%= link_to inv.invoice, edit_inventory_path(inv) %></td>
                     <td><%= inv.customer %></td>
                     <td><%= inv.paid_date %></td>
