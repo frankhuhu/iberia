@@ -3,6 +3,16 @@ class InventoriesController < ApplicationController
 
     def index
         @inventories = Inventory.all
+        @inventories.each do |inv|
+            cid = inv.customer
+            begin
+                cname = Customer.find(cid).firstname
+                inv.customer = cname
+            rescue ActiveRecord::RecordNotFound
+                inv.customer = ''
+            end
+        end
+        return @inventories
     end
 
     def new

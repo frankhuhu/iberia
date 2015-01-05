@@ -1,0 +1,54 @@
+<div class="page-container">
+
+  <%= render "shared/page_header" %>
+
+  <div class="page-content-wrapper">
+    <div class="content">
+      <div class="container-fluid container-fixed-lg">
+        <div class="panel panel-transparent">
+          <div class="panel-heading">
+            <div class="panel-title">Customers</div>
+            <div class="pull-right">
+              <div class="col-xs-12">
+                <button id="show-modal" class="btn btn-cons">
+                    <%= link_to "New Customer", new_customer_path, class: "btn btn-success" %>
+                </button>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="panel-body">
+            <table class="table table-hover" id="tableWithDynamicRows">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>FIRST NAME</th>
+                  <th>LAST NAME</th>
+                  <th>PHONE</th>
+                  <th>EMAIL</th>
+                  <th>COMPANY</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @customers.each do |customer| %>
+                  <tr>
+                    <td>
+                      <%= link_to customer_path(customer), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                        <i class="fa fa-trash"></i>
+                      <% end %>
+                    </td>
+                    <td><%= link_to customer.firstname, edit_customer_path(customer) %></td>
+                    <td><%= customer.lastname %></td>
+                    <td><%= customer.phone %></td>
+                    <td><%= customer.email %></td>
+                    <td><%= customer.company %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
