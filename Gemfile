@@ -40,3 +40,7 @@ gem 'spring',        group: :development
 
 # Use Font-Awesome
 gem 'font-awesome-sass', '~> 4.2.0'
+
+group :production do
+  gem 'mysql'
+end
