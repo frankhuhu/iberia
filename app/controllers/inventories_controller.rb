@@ -35,6 +35,7 @@ class InventoriesController < ApplicationController
         date_format_transform(:cutoff_date)
         date_format_transform(:in_date)
         date_format_transform(:out_date)
+        date_format_transform(:erd)
 
         if @inventory.update(inventory_params)
             redirect_to inventories_path

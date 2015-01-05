@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141223185736) do
+ActiveRecord::Schema.define(version: 20150105035712) do
 
   create_table "inventories", force: true do |t|
     t.string   "invoice"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20141223185736) do
     t.string   "bale"
     t.integer  "weight"
     t.string   "bgk"
-    t.string   "erd"
+    t.datetime "erd",         limit: 255
     t.datetime "cutoff_date"
     t.text     "note"
     t.datetime "in_date"

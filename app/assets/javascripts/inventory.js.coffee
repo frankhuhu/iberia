@@ -3,6 +3,6 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
-    $('#inventory_in_date, #inventory_out_date, #inventory_paid_date, #inventory_cutoff_date').datepicker({
+    $('#inventory_in_date, #inventory_out_date, #inventory_paid_date, #inventory_cutoff_date, #inventory_erd').datepicker({
         format: 'mm/dd/yyyy'
     });
