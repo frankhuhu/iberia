@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :inventory_ins
+
   resources :truckings
 
   # The priority is based upon order of creation: first created -> highest priority.

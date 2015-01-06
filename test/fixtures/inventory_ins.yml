@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  invoice: MyString
+  vendor: MyString
+  in_date: 2015-01-05 21:53:52
+  content: MyText
+  paid_date: 2015-01-05 21:53:52
+  po: MyString
+  truck: MyString
+
+two:
+  invoice: MyString
+  vendor: MyString
+  in_date: 2015-01-05 21:53:52
+  content: MyText
+  paid_date: 2015-01-05 21:53:52
+  po: MyString
+  truck: MyString

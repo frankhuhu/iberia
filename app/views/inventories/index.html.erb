@@ -50,6 +50,9 @@
                       <%= link_to inventory_path(inv), method: :delete, data: { confirm: 'Are you sure?' } do %>
                         <i class="fa fa-trash"></i>
                       <% end %>
+                      <%= link_to edit_inventory_path(inv) do %>
+                        <i class="fa fa-pencil"></i>
+                      <% end %>
                     </td>
                     <td><%= link_to inv.invoice, edit_inventory_path(inv) %></td>
                     <td><%= inv.customer %></td>

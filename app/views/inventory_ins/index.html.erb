@@ -7,11 +7,11 @@
       <div class="container-fluid container-fixed-lg">
         <div class="panel panel-transparent">
           <div class="panel-heading">
-            <div class="panel-title">Customers</div>
+            <div class="panel-title">Inventory In</div>
             <div class="pull-right">
               <div class="col-xs-12">
                 <button id="show-modal" class="btn btn-cons">
-                    <%= link_to "New Customer", new_customer_path, class: "btn btn-success" %>
+                    <%= link_to "New Inventory In", new_inventory_in_path, class: "btn btn-success" %>
                 </button>
               </div>
             </div>
@@ -22,29 +22,33 @@
               <thead>
                 <tr>
                   <th></th>
-                  <th>FIRST NAME</th>
-                  <th>LAST NAME</th>
-                  <th>PHONE</th>
-                  <th>EMAIL</th>
-                  <th>COMPANY</th>
+                  <th>INVOICE</th>
+                  <th>VENDOR</th>
+                  <th>IN DATE</th>
+                  <th>PAID DATE</th>
+                  <th>CONTENT</th>
+                  <th>PO</th>
+                  <th>TRUCK</th>
                 </tr>
               </thead>
               <tbody>
-                <% @customers.each do |customer| %>
+                <% @inventory_ins.each do |inv| %>
                   <tr>
                     <td>
-                      <%= link_to customer_path(customer), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                      <%= link_to inventory_in_path(inv), method: :delete, data: { confirm: 'Are you sure?' } do %>
                         <i class="fa fa-trash"></i>
                       <% end %>
-                      <%= link_to edit_customer_path(customer) do %>
+                      <%= link_to edit_inventory_in_path(inv) do %>
                         <i class="fa fa-pencil"></i>
                       <% end %>
                     </td>
-                    <td><%= link_to customer.firstname, edit_customer_path(customer) %></td>
-                    <td><%= customer.lastname %></td>
-                    <td><%= customer.phone %></td>
-                    <td><%= customer.email %></td>
-                    <td><%= customer.company %></td>
+                    <td><%= link_to inv.invoice, edit_inventory_in_path(inv) %></td>
+                    <td><%= inv.vendor %></td>
+                    <td><%= inv.in_date %></td>
+                    <td><%= inv.paid_date %></td>
+                    <td><%= inv.content %></td>
+                    <td><%= inv.po %></td>
+                    <td><%= inv.truck %></td>
                   </tr>
                 <% end %>
               </tbody>
