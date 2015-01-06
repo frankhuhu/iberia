@@ -1,0 +1,15 @@
+[Done] CSS and JS assets management.
+[Done] Icons lost for pages template.
+[Done] Add delete feature.
+[Done] Change ERD to date format.
+[Done] Add customer scaffold.
+[Done] Add inventory_in scaffold.
+[Done] Add trucking scaffold.
+       Deploy problem. Apache + Passenger + Production mode.
+       Generate packaging slip from inventory item.
+       Filter items by month.
+       Sort item by create date(jQuery).
+
+
+
+Ruby Spreadsheet: https://github.com/zdavatz/spreadsheet/blob/master/GUIDE.md
