@@ -1,0 +1,98 @@
+<%= form_for(@trucking) do |f| %>
+  <% if @trucking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trucking.errors.count, "error") %> prohibited this trucking from being saved:</h2>
+
+      <ul>
+      <% @trucking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>Trucking Information</p>
+
+  <div class="form-group-attached">
+    <div class="row clearfix">
+      <div class="col-sm-6">
+        <div class="form-group form-group-default">
+          <label>Vendor Po#</label>
+          <%= f.text_field :vendor_po, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group form-group-default">
+          <label>Vendor</label>
+          <%= f.text_field :vendor, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row clearfix">
+      <div class="col-sm-6">
+        <div class="form-group form-group-default">
+          <label>Truck Po#</label>
+          <%= f.text_field :truck_po, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group form-group-default">
+          <label>Trucker</label>
+          <%= f.text_field :trucker, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row clearfix">
+      <div class="col-sm-4">
+        <div class="form-group form-group-default">
+          <label>Pol</label>
+          <%= f.text_field :pol, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group form-group-default">
+          <label>Order Date</label>
+          <% if f.object.order_date? %>
+            <%= f.text_field :order_date, :value => format_date(f.object.order_date), class: 'form-control date' %>
+          <% else %>
+            <%= f.text_field :order_date, class: 'form-control date' %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group form-group-default">
+          <label>Received Date</label>
+          <% if f.object.received_date? %>
+            <%= f.text_field :received_date, :value => format_date(f.object.received_date), class: 'form-control date' %>
+          <% else %>
+            <%= f.text_field :received_date, class: 'form-control date' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row clearfix">
+      <div class="col-sm-6">
+        <div class="form-group form-group-default">
+          <label>Commodity</label>
+          <%= f.text_field :commodity, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group form-group-default">
+          <label>Remarks</label>
+          <%= f.text_field :remarks, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <br>
+  <br>
+  <%= f.submit class: "btn btn-success", value: "Submit" %>
+  <%= link_to 'Back', truckings_path, class: "btn btn-default" %><br>
+
+<% end %>

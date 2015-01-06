@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vendor_po: MyString
+  vendor: MyString
+  truck_po: MyString
+  trucker: MyString
+  pol: MyString
+  order_date: 2015-01-05 18:34:48
+  received_date: 2015-01-05 18:34:48
+  commodity: MyString
+  remarks: MyString
+
+two:
+  vendor_po: MyString
+  vendor: MyString
+  truck_po: MyString
+  trucker: MyString
+  pol: MyString
+  order_date: 2015-01-05 18:34:48
+  received_date: 2015-01-05 18:34:48
+  commodity: MyString
+  remarks: MyString

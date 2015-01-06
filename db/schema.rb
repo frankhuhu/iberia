@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150105043818) do
+ActiveRecord::Schema.define(version: 20150106023448) do
 
   create_table "customers", force: true do |t|
     t.string   "firstname"
@@ -48,6 +48,20 @@ ActiveRecord::Schema.define(version: 20150105043818) do
     t.string   "pic"
     t.string   "truck"
     t.string   "paid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "truckings", force: true do |t|
+    t.string   "vendor_po"
+    t.string   "vendor"
+    t.string   "truck_po"
+    t.string   "trucker"
+    t.string   "pol"
+    t.datetime "order_date"
+    t.datetime "received_date"
+    t.string   "commodity"
+    t.string   "remarks"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
