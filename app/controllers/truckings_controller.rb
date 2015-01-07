@@ -25,6 +25,9 @@ class TruckingsController < ApplicationController
   # POST /truckings
   # POST /truckings.json
   def create
+    date_format_transform(:order_date)
+    date_format_transform(:received_date)
+
     @trucking = Trucking.new(trucking_params)
 
     respond_to do |format|

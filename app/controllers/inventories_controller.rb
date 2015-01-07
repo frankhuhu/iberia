@@ -20,11 +20,17 @@ class InventoriesController < ApplicationController
     end
 
     def create
+        date_format_transform(:paid_date)
+        date_format_transform(:cutoff_date)
+        date_format_transform(:in_date)
+        date_format_transform(:out_date)
+        date_format_transform(:erd)
+
         #render plain: params[:inventory].inspect
         @inventory = Inventory.new(inventory_params)
 
         if @inventory.save
-            redirect_to @inventory
+            redirect_to inventories_path
         else
             render 'new'
         end
@@ -39,13 +45,13 @@ class InventoriesController < ApplicationController
     end
 
     def update
-        @inventory = Inventory.find(params[:id])
-
         date_format_transform(:paid_date)
         date_format_transform(:cutoff_date)
         date_format_transform(:in_date)
         date_format_transform(:out_date)
         date_format_transform(:erd)
+
+        @inventory = Inventory.find(params[:id])
 
         if @inventory.update(inventory_params)
             redirect_to inventories_path

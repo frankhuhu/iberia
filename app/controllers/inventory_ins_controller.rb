@@ -25,6 +25,9 @@ class InventoryInsController < ApplicationController
   # POST /inventory_ins
   # POST /inventory_ins.json
   def create
+    date_format_transform(:in_date)
+    date_format_transform(:paid_date)
+
     @inventory_in = InventoryIn.new(inventory_in_params)
 
     respond_to do |format|
