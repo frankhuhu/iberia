@@ -22,8 +22,8 @@
               <thead>
                 <tr>
                   <th></th>
-                  <th>FIRST NAME</th>
-                  <th>LAST NAME</th>
+                  <th>CUSTOMER ID</th>
+                  <th>COMPANY ID</th>
                   <th>PHONE</th>
                   <th>EMAIL</th>
                   <th>COMPANY</th>
@@ -40,8 +40,8 @@
                         <i class="fa fa-pencil"></i>
                       <% end %>
                     </td>
-                    <td><%= link_to customer.firstname, edit_customer_path(customer) %></td>
-                    <td><%= customer.lastname %></td>
+                    <td><%= link_to customer.customer_id, edit_customer_path(customer) %></td>
+                    <td><%= customer.company_id %></td>
                     <td><%= customer.phone %></td>
                     <td><%= customer.email %></td>
                     <td><%= customer.company %></td>
