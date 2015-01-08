@@ -6,8 +6,8 @@ class InventoriesController < ApplicationController
         @inventories.each do |inv|
             cid = inv.customer
             begin
-                cname = Customer.find(cid).contact
-                inv.customer = cname
+                s = Customer.find(cid).customer_id
+                inv.customer = s
             rescue ActiveRecord::RecordNotFound
                 inv.customer = ''
             end
