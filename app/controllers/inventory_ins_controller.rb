@@ -5,7 +5,15 @@ class InventoryInsController < ApplicationController
   # GET /inventory_ins
   # GET /inventory_ins.json
   def index
-    @inventory_ins = InventoryIn.all
+    unless params[:query_date].nil? || params[:query_date] == ''
+      query_date = DateTime.strptime(params[:query_date], '%m/%d/%Y')
+      startdate = query_date.beginning_of_month
+      enddate = query_date.end_of_month
+      @inventory_ins = InventoryIn.where("created_at >= :start_date AND created_at <= :end_date",
+                                         {start_date: startdate, end_date: enddate})
+    else
+      @inventory_ins = InventoryIn.all
+    end
   end
 
   # GET /inventory_ins/1

@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20150107063127) do
     t.string   "bale"
     t.integer  "weight"
     t.string   "bgk"
-    t.datetime "erd",         limit: 255
+    t.datetime "erd"
     t.datetime "cutoff_date"
     t.text     "note"
     t.datetime "in_date"

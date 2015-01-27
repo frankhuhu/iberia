@@ -2,8 +2,17 @@ class InventoriesController < ApplicationController
     layout "iberia"
 
     def index
-        @inventories = Inventory.all
+        unless params[:query_date].nil? || params[:query_date] == ''
+            query_date = DateTime.strptime(params[:query_date], '%m/%d/%Y')
+            startdate = query_date.beginning_of_month
+            enddate = query_date.end_of_month
+            @inventories = Inventory.where("created_at >= :start_date AND created_at <= :end_date",
+                                           {start_date: startdate, end_date: enddate})
+        else
+            @inventories = Inventory.all
+        end
         @inventories.each do |inv|
+            #logger.debug "inv.create_at = #{inv.created_at}"
             cid = inv.customer
             begin
                 s = Customer.find(cid).customer_id

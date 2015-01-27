@@ -27,5 +27,6 @@
 //= require jquery-validation/js/jquery.validate.min.js
 //= require bootstrap-datepicker/js/bootstrap-datepicker.js
 //= require pages/js/pages.min.js
+//= require jquery-ui/datepicker
 //= require jquery_ujs
 //= require_tree .
