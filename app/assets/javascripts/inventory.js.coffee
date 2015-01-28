@@ -6,7 +6,7 @@ $(document).ready ->
     $('#inventory_in_date, #inventory_out_date, #inventory_paid_date, #inventory_cutoff_date, #inventory_erd').datepicker({
         format: 'mm/dd/yyyy'
     });
-    $('#query_date').datepicker({
+    $('#inventory_query_date').datepicker({
         changeMonth: true,
         changeYear: true,
         showButtonPanel: true,

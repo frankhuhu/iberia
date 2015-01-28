@@ -1,6 +1,23 @@
 <div class="page-container">
 
+<!--
   <%= render "shared/page_header" %>
+-->
+
+  <div class="header ">
+    <div class="pull-left sm-table">
+      <div class="header-inner">
+        <div class="brand inline">
+          <%= image_tag("logo.png", height: '22', width: '98') %>
+        </div>
+      </div>
+    </div>
+    <div class="pull-right sm-table">
+      <div class="header-inner">
+        <%= link_to "New Trucking", new_trucking_path, class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
 
   <div class="page-content-wrapper">
     <div class="content">
@@ -8,14 +25,6 @@
         <div class="panel panel-transparent">
           <div class="panel-heading">
             <div class="panel-title">Truckings</div>
-            <div class="pull-right">
-              <div class="col-xs-12">
-                <button id="show-modal" class="btn btn-cons">
-                    <%= link_to "New Trucking", new_trucking_path, class: "btn btn-success" %>
-                </button>
-              </div>
-            </div>
-            <div class="clearfix"></div>
           </div>
           <div class="panel-body">
             <table class="table table-hover" id="tableWithDynamicRows">
@@ -64,47 +73,3 @@
   </div>
 </div>
 
-
-
-
-<h1>Listing truckings</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Vendor po</th>
-      <th>Vendor</th>
-      <th>Truck po</th>
-      <th>Trucker</th>
-      <th>Pol</th>
-      <th>Order date</th>
-      <th>Received date</th>
-      <th>Commodity</th>
-      <th>Remarks</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @truckings.each do |trucking| %>
-      <tr>
-        <td><%= trucking.vendor_po %></td>
-        <td><%= trucking.vendor %></td>
-        <td><%= trucking.truck_po %></td>
-        <td><%= trucking.trucker %></td>
-        <td><%= trucking.pol %></td>
-        <td><%= trucking.order_date %></td>
-        <td><%= trucking.received_date %></td>
-        <td><%= trucking.commodity %></td>
-        <td><%= trucking.remarks %></td>
-        <td><%= link_to 'Show', trucking %></td>
-        <td><%= link_to 'Edit', edit_trucking_path(trucking) %></td>
-        <td><%= link_to 'Destroy', trucking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Trucking', new_trucking_path %>
