@@ -1,0 +1,54 @@
+<div class="page-container">
+
+  <%= render "shared/page_header" %>
+
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+
+  <div class="page-content-wrapper">
+    <div class="content">
+      <div class="container-fluid container-fixed-lg">
+        <div class="panel panel-transparent">
+          <div class="panel-heading">
+            <div class="panel-title">Users</div>
+          </div>
+          <div class="panel-body">
+            <table class="table table-hover" id="tableWithDynamicRows">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Role</th>
+                  <th>Email</th>
+                  <th></th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% @users.each do |user| %>
+                  <tr>
+                    <td><%= user.name %></td>
+                    <td><%= user.role %></td>
+                    <td><%= user.email %></td>
+                    <td>
+                      <%= link_to 'Show', user, class: "btn btn-success" %>
+                      <%= link_to 'Edit', edit_user_path(user), class: "btn btn-success" %>
+                      <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-success" %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+
+            <br>
+
+            <%= link_to 'New User', new_user_path, class: "btn btn-success" %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

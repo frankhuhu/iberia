@@ -1,0 +1,43 @@
+<div class="page-container">
+  <%= render "shared/page_header" %>
+  <div class="page-content-wrapper">
+    <div class="content">
+      <div class="container-fluid container-fixed-lg bg-white">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="panel panel-transparent">
+              <div class="panel-body">
+
+                <p id="notice"><%= notice %></p>
+
+                <p>
+                  <strong>Name:</strong>
+                  <%= @user.name %>
+                </p>
+
+                <p>
+                  <strong>Password digest:</strong>
+                  <%= @user.password_digest %>
+                </p>
+
+                <p>
+                  <strong>Role:</strong>
+                  <%= @user.role %>
+                </p>
+
+                <p>
+                  <strong>Email:</strong>
+                  <%= @user.email %>
+                </p>
+
+                <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-success" %> |
+                <%= link_to 'Back', users_path, class: "btn btn-default" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
