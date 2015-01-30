@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <div class="p-l-50 m-l-20 p-r-50 m-r-20 p-t-50 m-t-30 sm-p-l-15 sm-p-r-15 sm-p-t-40">
+      <% if flash[:alert] %>
+        <p id="notice" style="color:red"><%= flash[:alert] %></p>
+      <% end %>
+      <p class="p-t-35">Sign into your account</p>
+      <%= form_tag(controller: "sessions", action: "create", method: "post", class: "p-t-15") do %>
+      <fieldset>
+        <div class="form-group form-group-default">
+          <label>Login</label>
+          <div class="controls">
+            <%= text_field_tag :name, params[:name], :class => "form-control", :required => true, :placeholder => "User Name" %>
+          </div>
+        </div>
+        <div class="form-group form-group-default">
+          <label>Password</label>
+          <div class="controls">
+            <%= password_field_tag :password, params[:password], :class => "form-control", :required => true, :placeholder => "Credentials" %>
+          </div>
+        </div>
+        <button class="btn btn-success btn-cons m-t-10" type="submit">Sign in</button>
+      </fieldset>
+      <% end %>
+    </div>
+  </div>
+</div>

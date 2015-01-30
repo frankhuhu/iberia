@@ -3,7 +3,7 @@
     <ul class="menu-items">
       <li class="m-t-30 ">
         <a href="/inventories" class="detailed">
-        <span class="title">Home</span>
+          <span class="title">Welcome <%= session[:user_name] %></span>
         </a>
         <span class="icon-thumbnail bg-success"><i class="fa fa-home"></i></span>
       </li>
@@ -22,6 +22,16 @@
       <li class="">
         <a href="/inventory_ins"><span class="title">Inventory In</span></a>
         <span class="icon-thumbnail "><i class="fa fa-bars"></i></span>
+      </li>
+      <% if session[:user_role] == 'admin' %>
+      <li class="">
+        <a href="/users"><span class="title">Users</span></a>
+        <span class="icon-thumbnail "><i class="fa fa-male"></i></span>
+      </li>
+      <% end %>
+      <li class="">
+        <a href="/logout"><span class="title">Log Out</span></a>
+        <span class="icon-thumbnail "><i class="fa fa-sign-out"></i></span>
       </li>
     </ul>
     <div class="clearfix"></div>

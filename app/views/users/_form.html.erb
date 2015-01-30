@@ -26,9 +26,9 @@
   </div>
   <div class="field">
     <%= f.label :role %><br>
-    <%= f.radio_button :role, 'admin' %>
+    <%= f.radio_button :role, 'admin', :checked => (@user.role == "admin") %>
     <%= label_tag(:admin, "admin") %>
-    <%= f.radio_button :role, 'normal' %>
+    <%= f.radio_button :role, 'normal', :checked => (@user.role != "admin") %>
     <%= label_tag(:normal, "normal") %>
   </div>
   <div class="field">
