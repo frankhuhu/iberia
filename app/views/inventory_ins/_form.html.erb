@@ -18,13 +18,13 @@
       <div class="col-sm-6">
         <div class="form-group form-group-default">
           <label>Invoice</label>
-          <%= f.text_field :invoice, class: 'form-control' %>
+          <%= f.text_field :invoice, class: 'form-control', :readonly=>(@type=='show') %>
         </div>
       </div>
       <div class="col-sm-6">
         <div class="form-group form-group-default">
           <label>Vendor</label>
-          <%= f.text_field :vendor, class: 'form-control' %>
+          <%= f.text_field :vendor, class: 'form-control', :readonly=>(@type=='show') %>
         </div>
       </div>
     </div>
@@ -34,9 +34,9 @@
         <div class="form-group form-group-default">
           <label>In Date</label>
           <% if f.object.in_date? %>
-            <%= f.text_field :in_date, :value => format_date(f.object.in_date), class: 'form-control date' %>
+            <%= f.text_field :in_date, :value => format_date(f.object.in_date), class: 'form-control date', :readonly=>(@type=='show') %>
           <% else %>
-            <%= f.text_field :in_date, class: 'form-control date' %>
+            <%= f.text_field :in_date, class: 'form-control date', :readonly=>(@type=='show') %>
           <% end %>
         </div>
       </div>
@@ -44,9 +44,9 @@
         <div class="form-group form-group-default">
           <label>Paid Date</label>
           <% if f.object.paid_date? %>
-            <%= f.text_field :paid_date, :value => format_date(f.object.paid_date), class: 'form-control date' %>
+            <%= f.text_field :paid_date, :value => format_date(f.object.paid_date), class: 'form-control date', :readonly=>(@type=='show') %>
           <% else %>
-            <%= f.text_field :paid_date, class: 'form-control date' %>
+            <%= f.text_field :paid_date, class: 'form-control date', :readonly=>(@type=='show') %>
           <% end %>
         </div>
       </div>
@@ -56,13 +56,13 @@
       <div class="col-sm-6">
         <div class="form-group form-group-default">
           <label>Po</label>
-          <%= f.text_field :po, class: 'form-control' %>
+          <%= f.text_field :po, class: 'form-control', :readonly=>(@type=='show') %>
         </div>
       </div>
       <div class="col-sm-6">
         <div class="form-group form-group-default">
           <label>Truck</label>
-          <%= f.text_field :truck, class: 'form-control' %>
+          <%= f.text_field :truck, class: 'form-control', :readonly=>(@type=='show') %>
         </div>
       </div>
     </div>
@@ -70,12 +70,16 @@
     <div class="row clearfix">
       <div class="form-group form-group-default">
         <label>Content</label>
-        <%= f.text_area :content, class: 'form-control' %>
+        <%= f.text_area :content, class: 'form-control', :readonly=>(@type=='show') %>
       </div>
     </div>
   </div>
   <br>
   <br>
-  <%= f.submit class: "btn btn-success", value: "Submit" %>
+  <% if @type == 'show' %>
+    <%= link_to 'Edit', edit_inventory_in_path, class: "btn btn-success" %>
+  <% else %>
+    <%= f.submit class: "btn btn-success", value: "Submit" %>
+  <% end %>
   <%= link_to 'Back', inventory_ins_path, class: "btn btn-default" %><br>
 <% end %>

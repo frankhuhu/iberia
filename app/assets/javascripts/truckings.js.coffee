@@ -4,5 +4,9 @@
 
 $(document).ready ->
     $('#trucking_order_date, #trucking_received_date').datepicker({
-        format: 'mm/dd/yyyy'
+        format: 'mm/dd/yyyy',
+        beforeShow: (input, inst) ->
+            if ($(this).attr('readonly') == 'readonly')
+                $(this).datepicker.prop("readonly", true);
+            return
     });

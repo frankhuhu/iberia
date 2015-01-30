@@ -49,11 +49,11 @@
                       <%= link_to trucking_path(t), method: :delete, data: { confirm: 'Are you sure?' } do %>
                         <i class="fa fa-trash"></i>
                       <% end %>
-                      <%= link_to edit_trucking_path(t) do %>
+                      <%= link_to trucking_path(t) do %>
                         <i class="fa fa-pencil"></i>
                       <% end %>
                     </td>
-                    <td><%= link_to t.vendor_po, edit_trucking_path(t) %></td>
+                    <td><%= link_to t.vendor_po, trucking_path(t) %></td>
                     <td><%= t.vendor %></td>
                     <td><%= t.truck_po %></td>
                     <td><%= t.trucker %></td>

@@ -4,7 +4,11 @@
 
 $(document).ready ->
     $('#inventory_in_in_date, #inventory_in_paid_date').datepicker({
-        format: 'mm/dd/yyyy'
+        format: 'mm/dd/yyyy',
+        beforeShow: (input, inst) ->
+            if ($(this).attr('readonly') == 'readonly')
+                $(this).datepicker.prop("readonly", true);
+            return
     });
     $('#inventory_in_query_date').datepicker({
         changeMonth: true,

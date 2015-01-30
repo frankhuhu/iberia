@@ -1,49 +1,19 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Vendor po:</strong>
-  <%= @trucking.vendor_po %>
-</p>
-
-<p>
-  <strong>Vendor:</strong>
-  <%= @trucking.vendor %>
-</p>
-
-<p>
-  <strong>Truck po:</strong>
-  <%= @trucking.truck_po %>
-</p>
-
-<p>
-  <strong>Trucker:</strong>
-  <%= @trucking.trucker %>
-</p>
-
-<p>
-  <strong>Pol:</strong>
-  <%= @trucking.pol %>
-</p>
-
-<p>
-  <strong>Order date:</strong>
-  <%= @trucking.order_date %>
-</p>
-
-<p>
-  <strong>Received date:</strong>
-  <%= @trucking.received_date %>
-</p>
-
-<p>
-  <strong>Commodity:</strong>
-  <%= @trucking.commodity %>
-</p>
-
-<p>
-  <strong>Remarks:</strong>
-  <%= @trucking.remarks %>
-</p>
-
-<%= link_to 'Edit', edit_trucking_path(@trucking) %> |
-<%= link_to 'Back', truckings_path %>
+<div class="page-container">
+  <%= render "shared/page_header" %>
+  <div class="page-content-wrapper">
+    <div class="content">
+      <div class="container-fluid container-fixed-lg bg-white">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="panel panel-transparent">
+              <div class="panel-body">
+                <% @type = 'show' %>
+                <%= render 'form', type: @type %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

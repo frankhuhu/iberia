@@ -45,11 +45,11 @@
                       <%= link_to customer_path(customer), method: :delete, data: { confirm: 'Are you sure?' } do %>
                         <i class="fa fa-trash"></i>
                       <% end %>
-                      <%= link_to edit_customer_path(customer) do %>
+                      <%= link_to customer_path(customer) do %>
                         <i class="fa fa-pencil"></i>
                       <% end %>
                     </td>
-                    <td><%= link_to customer.contact, edit_customer_path(customer) %></td>
+                    <td><%= link_to customer.contact, customer_path(customer) %></td>
                     <td><%= customer.customer_id %></td>
                     <td><%= customer.phone %></td>
                     <td><%= customer.email %></td>

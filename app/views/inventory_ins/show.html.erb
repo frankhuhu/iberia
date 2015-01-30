@@ -1,39 +1,19 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Invoice:</strong>
-  <%= @inventory_in.invoice %>
-</p>
-
-<p>
-  <strong>Vendor:</strong>
-  <%= @inventory_in.vendor %>
-</p>
-
-<p>
-  <strong>In date:</strong>
-  <%= @inventory_in.in_date %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @inventory_in.content %>
-</p>
-
-<p>
-  <strong>Paid date:</strong>
-  <%= @inventory_in.paid_date %>
-</p>
-
-<p>
-  <strong>Po:</strong>
-  <%= @inventory_in.po %>
-</p>
-
-<p>
-  <strong>Truck:</strong>
-  <%= @inventory_in.truck %>
-</p>
-
-<%= link_to 'Edit', edit_inventory_in_path(@inventory_in) %> |
-<%= link_to 'Back', inventory_ins_path %>
+<div class="page-container">
+  <%= render "shared/page_header" %>
+  <div class="page-content-wrapper">
+    <div class="content">
+      <div class="container-fluid container-fixed-lg bg-white">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="panel panel-transparent">
+              <div class="panel-body">
+                <% @type = 'show' %>
+                <%= render 'form', type: @type %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

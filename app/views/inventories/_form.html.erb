@@ -18,22 +18,22 @@
       <div class="col-sm-4">
         <div class="form-group form-group-default required">
           <label>Invoice#</label>
-          <%= f.text_field :invoice, class: 'form-control', :required => true %>
+          <%= f.text_field :invoice, class: 'form-control', :required => true, :readonly=>(@type=='show') %>
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-group form-group-default">
           <label>Customer</label>
-          <%= f.collection_select :customer, Customer.all, :id, :customer_id, {:prompt=>true, :include_blank=>"N/A"}, {:class=>'full-width', :selected=>@inventory.customer, :"data-init-plugin"=>"select2"} %>
+          <%= f.collection_select :customer, Customer.all, :id, :customer_id, {:prompt=>true, :include_blank=>"N/A", :readonly=>(@type=='show')}, {:class=>'full-width', :selected=>@inventory.customer, :"data-init-plugin"=>"select2"} %>
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-group form-group-default">
           <label>Paid Date</label>
           <% if f.object.paid_date? %>
-            <%= f.text_field :paid_date, :value => format_date(f.object.paid_date), class: 'form-control date' %>
+            <%= f.text_field :paid_date, :value => format_date(f.object.paid_date), class: 'form-control date', :readonly=>(@type=='show') %>
           <% else %>
-            <%= f.text_field :paid_date, class: 'form-control date' %>
+            <%= f.text_field :paid_date, class: 'form-control date', :readonly=>(@type=='show') %>
           <% end %>
         </div>
       </div>
@@ -42,19 +42,19 @@
       <div class="col-sm-4">
         <div class="form-group form-group-default">
           <label>Side</label>
-          <%= f.text_field :side, class: 'form-control' %>
+          <%= f.text_field :side, class: 'form-control', :readonly=>(@type=='show') %>
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-group form-group-default">
           <label>o/f</label>
-          <%= f.text_field :o_f, class: 'form-control' %>
+          <%= f.text_field :o_f, class: 'form-control', :readonly=>(@type=='show') %>
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-group form-group-default">
           <label>crt#</label>
-          <%= f.text_field :crt, class: 'form-control' %>
+          <%= f.text_field :crt, class: 'form-control', :readonly=>(@type=='show') %>
         </div>
       </div>
     </div>
@@ -62,19 +62,19 @@
       <div class="col-sm-4">
         <div class="form-group form-group-default">
           <label>Seal</label>
-          <%= f.text_field :seal, class: 'form-control' %>
+          <%= f.text_field :seal, class: 'form-control', :readonly=>(@type=='show') %>
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-group form-group-default">
           <label>Bale</label>
-          <%= f.text_field :bale, class: 'form-control' %>
+          <%= f.text_field :bale, class: 'form-control', :readonly=>(@type=='show') %>
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-group form-group-default">
           <label>Weight</label>
-          <%= f.text_field :weight, class: 'form-control' %>
+          <%= f.text_field :weight, class: 'form-control', :readonly=>(@type=='show') %>
         </div>
       </div>
     </div>
@@ -82,23 +82,23 @@
       <div class="col-sm-4">
         <div class="form-group form-group-default">
           <label>Bgk#</label>
-          <%= f.text_field :bgk, class: 'form-control' %>
+          <%= f.text_field :bgk, class: 'form-control', :readonly=>(@type=='show') %>
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-group form-group-default">
           <label>Erd</label>
           <% if f.object.erd? %>
-            <%= f.text_field :erd, :value => format_date(f.object.erd), class: 'form-control date' %>
+            <%= f.text_field :erd, :value => format_date(f.object.erd), class: 'form-control date', :readonly=>(@type=='show') %>
           <% else %>
-            <%= f.text_field :erd, class: 'form-control date' %>
+            <%= f.text_field :erd, class: 'form-control date', :readonly=>(@type=='show') %>
           <% end %>
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-group form-group-default">
           <label>Bl</label>
-          <%= f.text_field :bl, class: 'form-control' %>
+          <%= f.text_field :bl, class: 'form-control', :readonly=>(@type=='show') %>
         </div>
       </div>
     </div>
@@ -107,9 +107,9 @@
         <div class="form-group form-group-default">
           <label>CutOff Date</label>
           <% if f.object.cutoff_date? %>
-            <%= f.text_field :cutoff_date, :value => format_date(f.object.cutoff_date), class: 'form-control date' %>
+            <%= f.text_field :cutoff_date, :value => format_date(f.object.cutoff_date), class: 'form-control date', :readonly=>(@type=='show') %>
           <% else %>
-            <%= f.text_field :cutoff_date, class: 'form-control date' %>
+            <%= f.text_field :cutoff_date, class: 'form-control date', :readonly=>(@type=='show') %>
           <% end %>
         </div>
       </div>
@@ -117,9 +117,9 @@
         <div class="form-group form-group-default">
           <label>In Date</label>
           <% if f.object.in_date? %>
-            <%= f.text_field :in_date, :value => format_date(f.object.in_date), class: 'form-control date' %>
+            <%= f.text_field :in_date, :value => format_date(f.object.in_date), class: 'form-control date', :readonly=>(@type=='show') %>
           <% else %>
-            <%= f.text_field :in_date, class: 'form-control date' %>
+            <%= f.text_field :in_date, class: 'form-control date', :readonly=>(@type=='show') %>
           <% end %>
         </div>
       </div>
@@ -127,9 +127,9 @@
         <div class="form-group form-group-default">
           <label>Out Date</label>
           <% if f.object.out_date? %>
-            <%= f.text_field :out_date, :value => format_date(f.object.out_date), class: 'form-control date' %>
+            <%= f.text_field :out_date, :value => format_date(f.object.out_date), class: 'form-control date', :readonly=>(@type=='show') %>
           <% else %>
-            <%= f.text_field :out_date, class: 'form-control date' %>
+            <%= f.text_field :out_date, class: 'form-control date', :readonly=>(@type=='show') %>
           <% end %>
         </div>
       </div>
@@ -138,31 +138,35 @@
       <div class="col-sm-4">
         <div class="form-group form-group-default">
           <label>Pic</label>
-          <%= f.text_field :pic, class: 'form-control' %>
+          <%= f.text_field :pic, class: 'form-control', :readonly=>(@type=='show') %>
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-group form-group-default">
           <label>Truck</label>
-          <%= f.text_field :truck, class: 'form-control' %>
+          <%= f.text_field :truck, class: 'form-control', :readonly=>(@type=='show') %>
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-group form-group-default">
           <label>Paid</label>
-          <%= f.text_field :paid, class: 'form-control' %>
+          <%= f.text_field :paid, class: 'form-control', :readonly=>(@type=='show') %>
         </div>
       </div>
     </div>
     <div class="row clearfix">
       <div class="form-group form-group-default">
         <label>Note</label>
-        <%= f.text_area :note, class: 'form-control' %>
+        <%= f.text_area :note, class: 'form-control', :readonly=>(@type=='show') %>
       </div>
     </div>
   </div>
   <br>
   <br>
-  <%= f.submit class: "btn btn-success", value: "Submit" %>
+  <% if @type == 'show' %>
+    <%= link_to 'Edit', edit_inventory_path, class: "btn btn-success" %>
+  <% else %>
+    <%= f.submit class: "btn btn-success", value: "Submit" %>
+  <% end %>
   <%= link_to 'Back', inventories_path, class: "btn btn-default" %><br>
 <% end %>

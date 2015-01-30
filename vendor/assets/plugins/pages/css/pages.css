@@ -2081,8 +2081,10 @@ form legend {
 .form-control[disabled],
 .form-control[readonly],
 fieldset[disabled] .form-control {
-  background: #f8f8f8;
+  cursor:default;background: #f8f8f8;
+  /*
   color: rgba(98, 98, 98, 0.23);
+  */
 }
 /* Input Sizes
 --------------------------------------------------
@@ -8753,3 +8755,4 @@ Responsive Util
     background-size: 114px 29px;
   }
 }
+
