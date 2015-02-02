@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150129051555) do
+ActiveRecord::Schema.define(version: 20150202082245) do
 
   create_table "customers", force: true do |t|
     t.string   "contact"
@@ -19,13 +19,11 @@ ActiveRecord::Schema.define(version: 20150129051555) do
     t.string   "phone"
     t.string   "email"
     t.string   "company"
-    t.string   "address1"
-    t.string   "address2"
-    t.string   "address3"
-    t.string   "address4"
-    t.string   "address5"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "fax"
+    t.string   "bill_address"
+    t.string   "method"
   end
 
   create_table "inventories", force: true do |t|
@@ -51,6 +49,8 @@ ActiveRecord::Schema.define(version: 20150129051555) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "inventories", ["customer"], name: "index_inventories_on_customer", using: :btree
 
   create_table "inventory_ins", force: true do |t|
     t.string   "invoice"

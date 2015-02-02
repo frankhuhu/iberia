@@ -11,6 +11,7 @@ class CustomersController < ApplicationController
   # GET /customers/1
   # GET /customers/1.json
   def show
+    @customer_inventories = Inventory.where("customer = ?", @customer.id)
   end
 
   # GET /customers/new

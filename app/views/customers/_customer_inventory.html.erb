@@ -1,0 +1,20 @@
+<table class="table table-hover" id="tableWithDynamicRows">
+  <thead>
+    <tr>
+      <th>INVOICE</th>
+      <th>CRTN</th>
+      <th>BGKN</th>
+      <th>PAID DATE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customer_inventories.each do |ci| %>
+      <tr>
+          <td><%= link_to ci.invoice, inventory_path(ci) %></td>
+          <td><%= ci.crt %></td>
+          <td><%= ci.bgk %></td>
+          <td><%= ci.paid_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
