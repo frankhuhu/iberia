@@ -1,0 +1,63 @@
+
+<div class="page-container">
+
+<!--
+  <%= render "shared/page_header" %>
+-->
+
+  <div class="header ">
+    <div class="pull-left sm-table">
+      <div class="header-inner">
+        <div class="brand inline">
+          <%= image_tag("logo.png", height: '22', width: '98') %>
+        </div>
+      </div>
+    </div>
+    <div class="pull-right sm-table">
+      <div class="header-inner">
+        <%= link_to "New Vendor", new_vendor_path, class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-content-wrapper">
+    <div class="content">
+      <div class="container-fluid container-fixed-lg">
+        <div class="panel panel-transparent">
+          <div class="panel-heading">
+            <div class="panel-title">Vendors</div>
+          </div>
+          <div class="panel-body">
+            <table class="table table-hover" id="tableWithDynamicRows">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>VENDOR ID</th>
+                  <th>COMPANY</th>
+                  <th>EMAIL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @vendors.each do |vendor| %>
+                  <tr>
+                    <td>
+                      <%= link_to vendor_path(vendor), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                        <i class="fa fa-trash"></i>
+                      <% end %>
+                      <%= link_to vendor_path(vendor) do %>
+                        <i class="fa fa-pencil"></i>
+                      <% end %>
+                    </td>
+                    <td><%= link_to vendor.vendor_id, vendor_path(vendor) %></td>
+                    <td><%= vendor.company %></td>
+                    <td><%= vendor.email %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

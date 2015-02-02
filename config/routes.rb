@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :vendors
+
   controller :sessions do
     get    'login' => :new
     post   'login' => :create

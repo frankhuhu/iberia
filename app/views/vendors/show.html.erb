@@ -1,0 +1,19 @@
+<div class="page-container">
+  <%= render "shared/page_header" %>
+  <div class="page-content-wrapper">
+    <div class="content">
+      <div class="container-fluid container-fixed-lg bg-white">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="panel panel-transparent">
+              <div class="panel-body">
+                <% @type = 'show' %>
+                <%= render 'form', type: @type %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
