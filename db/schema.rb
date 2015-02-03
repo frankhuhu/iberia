@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150202222134) do
+ActiveRecord::Schema.define(version: 20150203044842) do
+
+  create_table "bills", force: true do |t|
+    t.string   "bill_no"
+    t.string   "customer_id"
+    t.boolean  "billable"
+    t.datetime "bill_date"
+    t.datetime "paid_date"
+    t.string   "freight"
+    t.text     "memo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "vendor_id"
+  end
 
   create_table "customers", force: true do |t|
     t.string   "contact"

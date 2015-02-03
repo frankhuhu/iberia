@@ -11,6 +11,15 @@ class VendorsController < ApplicationController
   # GET /vendors/1
   # GET /vendors/1.json
   def show
+    @vendor_bills = Bill.where("vendor_id = ?", @vendor.id)
+    @vendor_bills.each do |vb|
+      begin
+        t = Customer.find(vb.customer_id).customer_id
+        vb.customer_id = t
+      rescue ActiveRecord::RecordNotFound
+        vb.customer_id = ''
+      end
+    end
   end
 
   # GET /vendors/new

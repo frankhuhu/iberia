@@ -1,0 +1,71 @@
+<div class="page-container">
+
+<!--
+  <%= render "shared/page_header" %>
+-->
+
+  <div class="header ">
+    <div class="pull-left sm-table">
+      <div class="header-inner">
+        <div class="brand inline">
+          <%= image_tag("logo.png", height: '22', width: '98') %>
+        </div>
+      </div>
+    </div>
+    <div class="pull-right sm-table">
+      <div class="header-inner">
+        <input id="bill_query_date" value="Filter by Date" class="btn btn-success">
+        <%= link_to "New Bill", new_bill_path, class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-content-wrapper">
+    <div class="content">
+      <div class="container-fluid container-fixed-lg">
+        <div class="panel panel-transparent">
+          <div class="panel-heading">
+            <div class="panel-title">Bills</div>
+          </div>
+          <div class="panel-body">
+            <table class="table table-hover" id="tableWithDynamicRows">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>BILL NO#</th>
+                  <th>CUSTOMER</th>
+                  <th>VENDOR</th>
+                  <th>BILL DATE</th>
+                  <th>PAID DATE</th>
+                  <th>BILLABLE</th>
+                  <th>FREIGHT SHIPPING</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @bills.each do |bill| %>
+                  <tr>
+                    <td>
+                      <%= link_to bill_path(bill), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                        <i class="fa fa-trash"></i>
+                      <% end %>
+                      <%= link_to bill_path(bill) do %>
+                        <i class="fa fa-pencil"></i>
+                      <% end %>
+                    </td>
+                    <td><%= link_to bill.bill_no, bill_path(bill) %></td>
+                    <td><%= bill.customer_id %></td>
+                    <td><%= bill.vendor_id %></td>
+                    <td><%= bill.bill_date %></td>
+                    <td><%= bill.paid_date %></td>
+                    <td><%= bill.billable %></td>
+                    <td><%= bill.freight %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

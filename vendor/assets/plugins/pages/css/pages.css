@@ -2081,7 +2081,7 @@ form legend {
 .form-control[disabled],
 .form-control[readonly],
 fieldset[disabled] .form-control {
-  cursor:default;background: #f8f8f8;
+  background: #f8f8f8;
   /*
   color: rgba(98, 98, 98, 0.23);
   */

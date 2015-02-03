@@ -13,6 +13,25 @@
             </div>
           </div>
         </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="panel panel-transparent">
+              <div class="panel-heading">
+                <div class="panel-title">Bills</div>
+                  <div class="pull-right">
+                    <div class="col-xs-12">
+                      <%= link_to "Create Bill", new_bill_path, class: "btn btn-success" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-body">
+                <%= render 'vendor_bill' %>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
