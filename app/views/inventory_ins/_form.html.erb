@@ -24,7 +24,7 @@
       <div class="col-sm-6">
         <div class="form-group form-group-default">
           <label>Vendor</label>
-          <%= f.text_field :vendor, class: 'form-control', :readonly=>(@type=='show') %>
+          <%= f.collection_select :vendor, Vendor.all, :id, :vendor_id, {:prompt=>true, :include_blank=>"N/A"}, {:disabled=>(@type=='show'), :class=>'full-width', :selected=>@inventory_in.vendor, :"data-init-plugin"=>"select2"} %>
         </div>
       </div>
     </div>

@@ -5,15 +5,14 @@ class BillsController < ApplicationController
   # GET /bills
   # GET /bills.json
   def index
+    @query_date = DateTime.current
     unless params[:query_date].nil? || params[:query_date] == ''
-      query_date = DateTime.strptime(params[:query_date], '%m/%d/%Y')
-      startdate = query_date.beginning_of_month
-      enddate = query_date.end_of_month
-      @bills = Bill.where("created_at >= :start_date AND created_at <= :end_date",
-                          {start_date: startdate, end_date: enddate})
-    else
-      @bills = Bill.all
+      @query_date = DateTime.strptime(params[:query_date], '%m/%d/%Y')
     end
+    startdate = @query_date.beginning_of_month
+    enddate = @query_date.end_of_month
+    @bills = Bill.where("created_at >= :start_date AND created_at <= :end_date",
+                        {start_date: startdate, end_date: enddate})
 
     @bills.each do |bill|
       cid = bill.customer_id
